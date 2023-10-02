@@ -5,12 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Market Viewer</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
+    <div id="stockSymbolDisplay"></div>
 
-    <div id="stockData"></div>
+    <div id="stockData">
+        <div id="closePrice"></div>
+        <div id="openPrice"></div>
+        <div id="highPrice"></div>
+        <div id="lowPrice"></div>
+        <div id="volume"></div>
+    </div>
     
+
+    <input type="text" id="stockSymbol" placeholder="Enter stock symbol">
+    <button id="fetchData">Fetch Data</button>
+    
+    <button id="refreshData">Refresh</button>
+
+    <div id="loading" style="display:none;">Loading...</div>
+
+    <select id="timeRange">
+        <option value="1min">1 Minute</option>
+        <option value="1day">1 Day</option>
+        <option value="1week">1 Week</option>
+    </select>
+    
+    <canvas id="stockChart"></canvas>
+
+
+
+
     <script src="script.js"></script>
 </body>
 </html>
