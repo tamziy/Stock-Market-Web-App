@@ -6,6 +6,8 @@
     <title>Stock Market Viewer</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js"></script>
 </head>
 
 <body>
@@ -19,21 +21,26 @@
         <div id="volume"></div>
     </div>
     
-
-    <input type="text" id="stockSymbol" placeholder="Enter stock symbol">
-    <button id="fetchData">Fetch Data</button>
+    <div id="controls">
+        <input type="text" id="stockSymbol" placeholder="Enter stock symbol">
+        <button id="fetchData">Fetch Data</button>
+        
+        <button id="refreshData">Refresh</button>
     
-    <button id="refreshData">Refresh</button>
-
-    <div id="loading" style="display:none;">Loading...</div>
-
-    <select id="timeRange">
-        <option value="1min">1 Minute</option>
-        <option value="1day">1 Day</option>
-        <option value="1week">1 Week</option>
-    </select>
+        <div id="loading" style="display:none;">Loading...</div>
     
-    <canvas id="stockChart"></canvas>
+        <select id="timeRange">
+            <option value="1min">1 Minute</option>
+            <option value="1day">1 Day</option>
+            <option value="1week">1 Week</option>
+        </select>
+    </div>
+
+    
+    <div>
+        <canvas id="stockChart"></canvas>
+    </div>
+   
 
 
 
